@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 const getCourseDetails = async (cid, userID) => {
-    const courseDetails = await axios.post('https://mk42-titan-imjst.herokuapp-backend.com/academics/get-course', { cid, userID });
+    const courseDetails = await axios.post('https://mk42-titan-imjst-backend.herokuapp.com/academics/get-course', { cid, userID });
     // const courseDetails = {
     //     courseName: "Management Economics",
     //     courseCode: "19HS61",
@@ -21,16 +21,16 @@ const getCourseDetails = async (cid, userID) => {
 }
 
 const getQuizDetails = async (data) => {
-    const quizDetails = await axios.get('https://mk42-titan-imjst.herokuapp-backend.com/api/quiz/' + data)
+    const quizDetails = await axios.get('https://mk42-titan-imjst-backend.herokuapp.com/api/quiz/' + data)
     return quizDetails;
 }
 const submitQuizData = async (answersData, qId, userID) => {
 
-    const result = await axios.post('https://mk42-titan-imjst.herokuapp-backend.com/api/quiz/' + qId, { answersData, userID })
+    const result = await axios.post('https://mk42-titan-imjst-backend.herokuapp.com/api/quiz/' + qId, { answersData, userID })
     return result;
 }
 const getUserDetails = async (data) => {
-    const userData = await axios.post('https://mk42-titan-imjst.herokuapp-backend.com/api/login-user', data);
+    const userData = await axios.post('https://mk42-titan-imjst-backend.herokuapp.com/api/login-user', data);
     if (userData.data !== "invalid email and password") {
         cookies.set('token', userData.data.authToken, { path: '/' });
         return userData.data
@@ -41,18 +41,18 @@ const getUserDetails = async (data) => {
 }
 const getUserFulldata = async (data) => {
     const token = cookies.get('token');
-    const userData = await axios.post('https://mk42-titan-imjst.herokuapp-backend.com/academics', { token });
+    const userData = await axios.post('https://mk42-titan-imjst-backend.herokuapp.com/academics', { token });
     // console.log(userData)
     return userData;
 }
 const signUpNewUser = async (data) => {
-    const tokenData = await axios.post('https://mk42-titan-imjst.herokuapp-backend.com/api/add-user', data);
+    const tokenData = await axios.post('https://mk42-titan-imjst-backend.herokuapp.com/api/add-user', data);
     console.log(tokenData.data)
     cookies.set('token', tokenData.data, { path: '/' });
 }
 const submitExtraDetails = async (data) => {
     const token = cookies.get('token')
-    const res = await axios.post('https://mk42-titan-imjst.herokuapp-backend.com/api/add-user-data', { data, token });
+    const res = await axios.post('https://mk42-titan-imjst-backend.herokuapp.com/api/add-user-data', { data, token });
 }
 
 const isUserAuthenticated = () => {
