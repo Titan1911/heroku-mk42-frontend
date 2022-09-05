@@ -69,7 +69,7 @@ export default function SignIn({ appName }) {
         <ThemeProvider theme={theme}>
             {
 
-                <Container sx={{ display: 'flex' }}>
+                <Container sx={{ display: 'flex', flexDirection: 'column' }}>
                     <Container component="main" maxWidth="xs">
                         <CssBaseline />
 

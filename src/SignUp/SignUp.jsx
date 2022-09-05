@@ -53,7 +53,7 @@ export default function SignUp({ appName }) {
                 console.log('added successfully')
             })
             .catch(() => {
-                alert('Sign-Up unsuccessful Please try again !!')
+
             })
         console.log("just above")
         navigate("/add-profile-info")
