@@ -62,6 +62,7 @@ const isUserAuthenticated = () => {
         console.log("cookie exists")
         return true;
     }
+    return false;
 
     // const getResponse = async () => {
     //     const response = await axios.get('http://localhost:8000/api/authenticate', {

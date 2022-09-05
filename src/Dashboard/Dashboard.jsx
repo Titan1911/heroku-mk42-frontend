@@ -31,7 +31,7 @@ const Dashboard = () => {
 
 
     if (!isUserAuthenticated()) {
-        navigate("/sign-in")
+
     } else {
         return (
 
