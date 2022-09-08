@@ -8,7 +8,7 @@ const Logout = () => {
     const navigate = useNavigate()
     useEffect(() => {
         cookies.remove('token')
-        navigate('/dashboard')
+        navigate('/')
     }, [])
     return (
         <div>Logout</div>

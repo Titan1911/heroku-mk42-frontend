@@ -241,6 +241,7 @@ export default function AddProfileInfo() {
                                 >
                                     <Tab label="Personal Details" {...a11yProps(0)} />
                                     <Tab label="Academic Details" {...a11yProps(1)} />
+                                    <Tab label="Identity" {...a11yProps(2)} />
 
                                 </Tabs>
                                 <TabPanel value={value} index={0}>
@@ -446,6 +447,61 @@ export default function AddProfileInfo() {
                                                     onClick={handleNextButton}
                                                 >
                                                     Next
+                                                </Button>
+                                            </Box>
+
+                                        </Grid>
+                                    </Box>
+                                </TabPanel>
+                                <TabPanel value={value} index={2}>
+                                    <Box component="form" noValidate sx={{ mt: 3 }}>
+                                        <Grid container spacing={2}>
+                                            
+
+                                            <Grid item xs={12}>
+                                                <TextField
+                                                    autoComplete="given-name"
+                                                    name="gender"
+                                                    required
+                                                    fullWidth
+                                                    id="gender"
+                                                    label="Gender"
+
+                                                    value={gender}
+                                                    onChange={handleGenderChange}
+                                                />
+                                            </Grid>
+
+
+                                            <Box component={Grid}
+                                                item
+
+                                                xs={12}
+                                                sx={{
+
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between'
+                                                }}
+                                            >
+                                                <Button
+                                                    variant="text"
+                                                    sx={{
+                                                        mt: 1, mb: 2,
+
+                                                    }}
+                                                    onClick={handlePrevButton}
+                                                >
+                                                    prev
+                                                </Button>
+                                                <Button
+                                                    variant="contained"
+                                                    sx={{
+                                                        mt: 1, mb: 2,
+
+                                                    }}
+                                                    onClick={handleSubmitButton}
+                                                >
+                                                    Submit
                                                 </Button>
                                             </Box>
 
