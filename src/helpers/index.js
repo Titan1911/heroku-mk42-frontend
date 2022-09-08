@@ -46,8 +46,8 @@ const getUserFulldata = async (data) => {
     return userData;
 }
 const signUpNewUser = async (data) => {
-    const tokenData = await axios.post('https://mk42-titan-imjst-backend.herokuapp.com/api/add-user', data);
-    console.log(tokenData.data)
+    const tokenData = await axios.post('http://mk42-titan-imjst-backend.herokuapp.com/api/add-user', data);
+    console.log("the token is :" + tokenData.data)
     cookies.set('token', tokenData.data, { path: '/' });
 }
 const submitExtraDetails = async (data) => {

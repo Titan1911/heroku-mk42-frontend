@@ -50,12 +50,12 @@ export default function SignUp({ appName }) {
         }
         signUpNewUser(signUpData)
             .then(() => {
-                console.log('added successfully')
+                // console.log('added successfully')
             })
             .catch(() => {
 
             })
-        console.log("just above")
+        // console.log("just above")
         navigate("/add-profile-info")
     };
 
